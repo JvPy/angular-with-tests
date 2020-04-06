@@ -1,16 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { config } from 'rxjs';
-
-interface ICrud {
-  id: number,
-  name: string,
-  description: string,
-  price: number,
-  email: string,
-  phone: string
-}
-
+import { Observable } from 'rxjs/Observable';
+import { ICrud } from './icrud';
 @Injectable({
   providedIn: 'root'
 })
@@ -26,10 +17,8 @@ export class CrudService {
   }
   
   //Read
-  get(){
-    console.log('get')
-    console.log(this.configUrl);
-    return fetch('https://jsonplaceholder.typicode.com/users').then(x => x.json());
+  get(): Observable<ICrud[]>{
+    return this.http.get<ICrud[]>('https://jsonplaceholder.typicode.com/users');
   }
   
   //Update
@@ -38,7 +27,7 @@ export class CrudService {
   }
   
   //Delete
-  delete(){
-    return this.http.get<void>(this.configUrl);
+  delete(id:number){
+    return this.http.get<void>(this.configUrl + id);
   }
 }
