@@ -12,13 +12,15 @@ import { CrudtabelComponent } from './crudtabel/crudtabel.component';
 import { NavComponent } from './nav/nav.component';
 import { CrudService } from './crud.service';
 import { LoginService } from './login.service';
+import { ProductmodalComponent } from './productmodal/productmodal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     CrudtabelComponent,
-    NavComponent
+    NavComponent,
+    ProductmodalComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
 <app-nav></app-nav>
-<app-login></app-login>
-<app-crudtabel></app-crudtabel>
+<app-login *ngIf="router == '/login'"></app-login>
+<app-crudtabel *ngIf="router == '/crud'"></app-crudtabel>
+<router-outlet></router-outlet>

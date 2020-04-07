@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
+// import { Observable } from 'rxjs/Observable';
 import { ICrud } from './icrud';
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class CrudService {
   }
   
   //Read
-  get(): Observable<ICrud[]>{
+  get()/*: Observable<ICrud[]>*/{
     return this.http.get<ICrud[]>('https://jsonplaceholder.typicode.com/users');
   }
   
