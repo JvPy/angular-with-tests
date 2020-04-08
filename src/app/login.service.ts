@@ -13,7 +13,7 @@ export class LoginService {
   checkLogin(username: string, password: string){
     // console.log(username, password, btoa(password))
 
-    let x = this.http.get<boolean>('https://jsonplaceholder.typicode.com/users');
+    let x = this.http.post<boolean>('https://jsonplaceholder.typicode.com/users', "");
     
     this.userValidated =  x ? true : false 
 

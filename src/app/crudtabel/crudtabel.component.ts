@@ -11,6 +11,7 @@ import { ICrud } from '../icrud';
 export class CrudtabelComponent implements OnInit {
 
   public items = []
+  public item;
 
   constructor(private crud: CrudService) { }
 
@@ -21,11 +22,18 @@ export class CrudtabelComponent implements OnInit {
 
   onClickDelete(id:number){
     console.log('click on delete ' + id);
-    this.crud.delete(id);
+
+    const confirmVar = confirm('delete item with id of ' + id);
+    if(confirmVar) this.crud.delete(id);
   }
 
   onClickUpdate(item){
+    this.item = item;
     console.log(item)
+  }
+
+  onClickNew(){
+    this.item = JSON.stringify({id: 0, name:"", description:"", price:""})
   }
 
 }

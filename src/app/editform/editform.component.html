@@ -1,0 +1,26 @@
+<div *ngIf="display && item" class="py-5">
+    <div class="row">
+        <div class="col-md-12">
+            <form #signupForm="ngForm" (ngSubmit)="registerUser(signupForm)">
+                <div class="form-group">
+                    <label for="username">ID</label>
+                    <input [(ngModel)]="item.id" name="id" readonly type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="password">Name</label>
+                    <input [(ngModel)]="item.name" name="name" type="text" class="form-control" id="formGroupExampleInput" placeholder="Item name">
+                </div>
+                <div class="form-group">
+                    <label for="username">Description</label>
+                    <input [(ngModel)]="item.description" name="description" type="text" class="form-control" id="formGroupExampleInput" placeholder="Item description">
+                </div>
+                <div class="form-group">
+                    <label for="password">Price</label>
+                    <input [(ngModel)]="item.price" name="price" class="form-control" id="formGroupExampleInput" placeholder="Item price">
+                </div>
+                <div *ngIf="isWrong" class="alert alert-danger">{{message}}</div>
+                <button class="btn btn-primary" type="submit">Confirm</button>
+            </form>
+        </div>
+    </div>
+</div>

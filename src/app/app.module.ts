@@ -12,7 +12,7 @@ import { CrudtabelComponent } from './crudtabel/crudtabel.component';
 import { NavComponent } from './nav/nav.component';
 import { CrudService } from './crud.service';
 import { LoginService } from './login.service';
-import { ProductmodalComponent } from './productmodal/productmodal.component';
+import { EditformComponent } from './editform/editform.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { ProductmodalComponent } from './productmodal/productmodal.component';
     LoginComponent,
     CrudtabelComponent,
     NavComponent,
-    ProductmodalComponent
+    EditformComponent,
   ],
   imports: [
     BrowserModule,

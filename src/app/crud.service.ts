@@ -22,12 +22,12 @@ export class CrudService {
   }
   
   //Update
-  update(){
-    return this.http.get<ICrud>(this.configUrl);
+  update(itens){
+    return this.http.get(this.configUrl, itens);
   }
   
   //Delete
-  delete(id:number){
-    return this.http.get<void>(this.configUrl + id);
+  delete(id){
+    return this.http.get(this.configUrl, id);
   }
 }
